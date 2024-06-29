@@ -9,3 +9,6 @@
 	https://github.com/haruki1953/240525-bangumi-list-dev-diary
 
 [01-项目文档](01-项目文档.md)
+
+【TODO】
+- 前端控制discord可选嵌入
