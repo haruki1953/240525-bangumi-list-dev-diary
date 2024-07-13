@@ -1,4 +1,10 @@
 ### 查看errorlog
+哦哦哦，应该看错误日志
+```
+tail -f /www/wwwlogs/bgm-test-proxy.sakiko.top.error.log
+```
+（之前一直看的是/www/server/nginx/logs/error.log，怪不得啥也没有）
+
 报错是这样的
 ```
 2024/07/13 16:24:14 [error] 6058#0: *90048 connect() to [2606:4700:20::681a:917]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::681a:917]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
@@ -8,5 +14,14 @@
 2024/07/13 16:24:14 [error] 6058#0: *90048 connect() to [2606:4700:20::ac43:4943]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::ac43:4943]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
 2024/07/13 16:24:14 [error] 6058#0: *90048 connect() to [2606:4700:20::681a:817]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::681a:817]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
 2024/07/13 16:24:15 [error] 6058#0: *90048 open() "/www/wwwroot/bgm-test-proxy.sakiko.top/favicon.ico" failed (2: No such file or directory), client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /favicon.ico HTTP/2.0", host: "bgm-test-proxy.sakiko.top", referrer: "https://bgm-test-proxy.sakiko.top/bangumi-cover1/l/98/5e/386809_1yR81.jpg"
+```
+
+```
+2024/07/13 18:18:39 [error] 26711#0: *92675 connect() to [2606:4700:20::ac43:4943]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::ac43:4943]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
+2024/07/13 18:18:39 [error] 26711#0: *92675 connect() to [2606:4700:20::681a:917]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::681a:917]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
+2024/07/13 18:18:39 [error] 26711#0: *92675 connect() to [2606:4700:20::681a:817]:443 failed (101: Network is unreachable) while connecting to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://[2606:4700:20::681a:817]:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
+2024/07/13 18:18:39 [error] 26711#0: *92675 SSL_do_handshake() failed (SSL: error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:SSL alert number 40) while SSL handshaking to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://104.26.9.23:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
+2024/07/13 18:18:39 [error] 26711#0: *92675 SSL_do_handshake() failed (SSL: error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:SSL alert number 40) while SSL handshaking to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://104.26.8.23:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
+2024/07/13 18:18:39 [error] 26711#0: *92675 SSL_do_handshake() failed (SSL: error:14094410:SSL routines:ssl3_read_bytes:sslv3 alert handshake failure:SSL alert number 40) while SSL handshaking to upstream, client: 106.34.76.116, server: bgm-test-proxy.sakiko.top, request: "GET /bangumi-cover1/l/98/5e/386809_1yR81.jpg HTTP/2.0", upstream: "https://172.67.73.67:443/r/400/pic/cover/l/98/5e/386809_1yR81.jpg", host: "bgm-test-proxy.sakiko.top"
 ```
 
